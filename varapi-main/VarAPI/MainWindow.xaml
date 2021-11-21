@@ -36,60 +36,60 @@
         <Button Content="Regresar" Grid.Column="4" Height="60" Width="150" Click="Regresar" />
 
         <Label Grid.Row="1" Grid.Column="1" Content="Nombre del informante:" />
-        <TextBox x:Name="InformerName" Grid.Row="2" Grid.Column="1" />
+        <TextBox x:Name="Informante" Grid.Row="2" Grid.Column="1" />
 
         <Label Grid.Row="1" Grid.Column="2" Content="Teléfono del informante:" />
-        <TextBox Grid.Row="2" Name="InformerPhone" Grid.Column="2" />
+        <TextBox Grid.Row="2" Name="Telefono" Grid.Column="2" />
 
         <Label Grid.Row="1" Grid.Column="3" Content="Dirección del informante:" />
-        <TextBox Grid.Row="2" Name="InformerAddress" Grid.Column="3" />
+        <TextBox Grid.Row="2" Name="Direccion" Grid.Column="3" />
 
         <Label Grid.Row="3" Grid.Column="1" Content="Orden animal:" />
-        <TextBox Grid.Row="4" Grid.Column="1" x:Name="AnimalOrder" />
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="Orden" />
 
         <Label Grid.Row="3" Grid.Column="2" Content="Condición animal:" />
-        <TextBox Grid.Row="4" Grid.Column="2" x:Name="AnimalCondition" />
+        <TextBox Grid.Row="4" Grid.Column="2" x:Name="Condicion" />
 
         <Label Grid.Row="3" Grid.Column="3" Content="Número de animales:" />
-        <TextBox Grid.Row="4" Grid.Column="3" x:Name="NumberOfAnimals" />
+        <TextBox Grid.Row="4" Grid.Column="3" x:Name="Numero" />
 
 
         <Label Grid.Row="3" Grid.Column="4" Content="Observaciones:" />
         <TextBox Grid.Row="4" Grid.Column="4" x:Name="Observations" />
 
-        <CheckBox Grid.Row="5" Grid.Column="1" x:Name="EaseOfAccess">
-            Fácil acceso
+        <CheckBox Grid.Row="5" Grid.Column="1" x:Name="FacilAcceso">
+            Facil acceso
         </CheckBox>
-        <CheckBox Grid.Row="6" Grid.Column="1" Name="Cliff">
+        <CheckBox Grid.Row="6" Grid.Column="1" Name="Acantilado">
             Acantilado
         </CheckBox>
 
         <Label Grid.Row="5" Grid.Column="2" Content="Sustrato:" />
-        <TextBox Grid.Row="6" Grid.Column="2" x:Name="Substratum" />
+        <TextBox Grid.Row="6" Grid.Column="2" x:Name="Sustrato" />
 
         <Label Grid.Row="5" Grid.Column="3" Content="Primera vez visto en:" />
-        <TextBox Grid.Row="6" Grid.Column="3" x:Name="FirstSightIn" />
+        <TextBox Grid.Row="6" Grid.Column="3" x:Name="PrimerAvistamiento" />
 
         <Label Grid.Row="5" Grid.Column="4" Content="Fecha de avistamiento:" />
-        <TextBox Grid.Row="6" Grid.Column="4" x:Name="DateOfSighting" />
+        <TextBox Grid.Row="6" Grid.Column="4" x:Name="Fecha" />
 
         <Label Grid.Row="7" Content="País:" Grid.Column="1" />
-        <TextBox Grid.Row="8" Grid.Column="1" x:Name="Country" />
+        <TextBox Grid.Row="8" Grid.Column="1" x:Name="Pais" />
 
         <Label Grid.Row="7" Grid.Column="2" Content="Estado:" />
-        <TextBox Grid.Row="8" Grid.Column="2" x:Name="State" />
+        <TextBox Grid.Row="8" Grid.Column="2" x:Name="Estado" />
 
         <Label Grid.Row="7" Grid.Column="3" Content="Ciudad:" />
-        <TextBox Grid.Row="8" Grid.Column="3" x:Name="City" />
+        <TextBox Grid.Row="8" Grid.Column="3" x:Name="Ciudad" />
 
         <Label Grid.Row="7" Grid.Column="4" Content="Localidad:" />
-        <TextBox Grid.Row="8" Grid.Column="4" x:Name="Location" />
+        <TextBox Grid.Row="8" Grid.Column="4" x:Name="Localidad" />
 
         <Label Grid.Row="9" Content="Latitud:" Grid.Column="1" />
-        <TextBox Grid.Row="10" Grid.Column="1" x:Name="Latitude" />
+        <TextBox Grid.Row="10" Grid.Column="1" x:Name="Latitud" />
 
         <Label Grid.Row="9" Grid.Column="2" Content="Longitud:" />
-        <TextBox Grid.Row="10" Grid.Column="2" x:Name="Length" />
+        <TextBox Grid.Row="10" Grid.Column="2" x:Name="Longitud" />
 
         <Label Grid.Row="9" Grid.Column="3" Content="Información adicional ubicación:" />
         <TextBox Grid.Row="10" Grid.Column="3" x:Name="AditionalInfoOfLocation" />

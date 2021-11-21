@@ -7,64 +7,49 @@ using VarAPI.Exceptions;
 
 namespace VarAPI
 {
-    /// <summary>
-    /// Interaction logic for MainWindow.xaml
-    /// </summary>
     public partial class MainWindow : Window
     {
-
         public MainWindow()
         {
             InitializeComponent();
         }
-
         private void ClickOnSaveButton(object sender, RoutedEventArgs e)
         {
+            String token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjM3NDUzNzA4LCJqdGkiOiI5NzlkZTc3Yi0yMmJjLTQwMDUtYTgyYi1kNGI4ODNmZjM0ZTkiLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiMjNiMTU0YjctOTIxMS00NjhkLTk4NTYtZThhMTYxOGZkM2QyIiwibmJmIjoxNjM3NDUzNzA4LCJleHAiOjE2Mzc0NzUzMDh9.zyOlvSKMHd5ltsgoHS5D4eugpYn4TE9hB6XBWLEPk4E;"
             Varamiento varamiento = new Varamiento {                                
                 finalizado = true,
-                nombreInformante = InformerName.Text,
-                telefonoInformante = InformerPhone.Text,
-                direccionInformante = InformerAddress.Text,
-                ordenAnimal = AnimalOrder.Text,
-                condicionAnimal = AnimalCondition.Text,
-                numeroAnimales = int.Parse(NumberOfAnimals.Text),
+                nombreInformante = Informante.Text,
+                telefonoInformante = Telefono.Text,
+                direccionInformante = Direccion.Text,
+                ordenAnimal = Orden.Text,
+                condicionAnimal = Condicion.Text,
+                numeroAnimales = int.Parse(Numero.Text),
                 observaciones = Observations.Text,
-                facilAcceso = EaseOfAccess.IsChecked ?? false,
-                acantilado = Cliff.IsChecked ?? false,
-                sustrato = Substratum.Text,
-                primeraVezVisto = FirstSightIn.Text,
-                fechaAvistamiento = DateOfSighting.Text,
-                pais = Country.Text,
-                estado = State.Text,
-                ciudad = City.Text,
-                localidad = Location.Text,
+                facilAcceso = FacilAcceso.IsChecked ?? false,
+                acantilado = Acantilado.IsChecked ?? false,
+                sustrato = Sustrato.Text,
+                primeraVezVisto = PrimerAvistamiento.Text,
+                fechaAvistamiento = Fecha.Text,
+                pais = Pais.Text,
+                estado = Estado.Text,
+                ciudad = Ciudad.Text,
+                localidad = Localidad.Text,
                 informacionAdicionalUbicacion = AditionalInfoOfLocation.Text,
-                latitud = Latitude.Text,
-                longitud = Length.Text
+                latitud = Latitud.Text,
+                longitud = Longitud.Text
             };
-
             try
             {
                 var response = "http://ec2-3-137-222-34.us-east-2.compute.amazonaws.com/yo/varamientos"
-                .WithOAuthBearerToken("eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJmcmVzaCI6dHJ1ZSwiaWF0IjoxNjM3NDQ2OTYwLCJqdGkiOiI5YjQ5YzhhOS05Y2IzLTRhM2ItOTUwYi1mMTM3MjVmYWMxNTciLCJ0eXBlIjoiYWNjZXNzIiwic3ViIjoiZjIyN2UxZGEtMTU4ZC00ODZiLWJjY2EtNzU2NjI2YzNjOTE3IiwibmJmIjoxNjM3NDQ2OTYwLCJleHAiOjE2Mzc0Njg1NjB9.jFhHTTInSEb0N4gIXBkJQX4vXr6CaS8RT94gIaCfq7E")
+                .WithOAuthBearerToken(token)
                     .PostJsonAsync(varamiento)
                 .ReceiveJson().GetAwaiter().GetResult();
-
-                Console.WriteLine(response);
             } catch(FlurlHttpException flurlException)
             {
                 var error = flurlException.GetResponseJsonAsync<NetworkException>().GetAwaiter().GetResult();
                 Console.WriteLine(error);
                 Console.WriteLine(flurlException.Message);
             }
-
-        }
-
-        private void Regresar(object sender, RoutedEventArgs e)
-        {
-            ListaVaramientos lv = new ListaVaramientos();
-            lv.Show();
-            this.Close();
         }
     }
 }
